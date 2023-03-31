@@ -1,6 +1,7 @@
 package com.bharat.kumar.landingSections
 
 import androidx.compose.runtime.Composable
+import com.bharat.kumar.landingSections.styles.MainLogoImageStyle
 import com.bharat.kumar.landingSections.styles.NavigationItemStyle
 import com.bharat.kumar.models.Section
 import com.bharat.kumar.themes.Colors
@@ -28,22 +29,25 @@ import org.jetbrains.compose.web.dom.Text
 @Composable
 fun HeaderSection() {
     Row (
-        modifier = Modifier.width(SECTION_WIDTH.px),
+        modifier = Modifier.width(SECTION_WIDTH.px)
+            .padding(leftRight = 50.px),
         horizontalArrangement = Arrangement.Start,
         verticalAlignment = Alignment.CenterVertically
     ){
         Image(
-            modifier = Modifier.fillMaxWidth(15.percent).objectFit(ObjectFit.Fill),
+            modifier = MainLogoImageStyle.toModifier()
+                .fillMaxWidth(15.percent)
+                .objectFit(ObjectFit.Fill),
             src = WEBSITE_LOGO
         )
         HeaderMenu()
         Button(
-            modifier = Modifier.width(Width.FitContent).backgroundColor(Colors.Secondary.rgb),
+            modifier = Modifier.width(10.percent).backgroundColor(Colors.Secondary.rgb),
           onClick = {
 
           }
         ){
-            Text("Download P N Bharat  CV")
+            Text("Download CV")
         }
     }
 
