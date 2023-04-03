@@ -10,6 +10,7 @@ enum class Colors(
     Primary(hex = "#19142A", rgb =rgb(25,20,42)),
     Secondary(hex = "#D6223B", rgb = rgb(r = 214, g = 34, b = 59)),
     SecondaryVariant(hex = "#2a2344", rgb = rgb(42,35,68)),
+    WelcomeTextBackground(hex = "#51182e", rgb = rgb(81,24,46)),
     White(hex = "#FFFFFF", rgb = rgb(255,255,255)),
 
 }

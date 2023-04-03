@@ -16,7 +16,8 @@ val NavigationItemStyle by ComponentStyle {
     anyLink{
         Modifier
             .color(Colors.White.rgb)
-            .fontSize(16.px)
+            .fontSize(18.px)
+            .fontFamily("Roboto")
             .transition(CSSTransition("color",500.ms))
             .transition(CSSTransition("font-size",500.ms))
 
@@ -24,7 +25,7 @@ val NavigationItemStyle by ComponentStyle {
     hover{
         Modifier
             .color(Colors.Secondary.rgb)
-            .fontSize(18.px)
+            .fontSize(20.px)
     }
 }
 
