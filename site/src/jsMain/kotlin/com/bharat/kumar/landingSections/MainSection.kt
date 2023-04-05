@@ -20,6 +20,7 @@ fun MainSection() {
     ){
         HeaderSection()
         AboutMeSection()
+        ExperienceSection()
     }
 
 }
