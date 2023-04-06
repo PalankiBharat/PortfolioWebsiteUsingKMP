@@ -3,6 +3,7 @@ package com.bharat.kumar.landingSections
 import androidx.compose.runtime.Composable
 import com.bharat.kumar.models.Experience
 import com.bharat.kumar.themes.Color
+import com.varabyte.kobweb.compose.css.ScrollBehavior
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.css.functions.RadialGradient
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -13,6 +14,7 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.style.*
 import com.varabyte.kobweb.silk.components.text.SpanText
@@ -27,16 +29,20 @@ fun ExperienceSection() {
     var i = 1
     Column (modifier = Modifier.fillMaxWidth().padding(50.px)){
         ExperienceHeading()
-        Row(modifier = Modifier.fillMaxWidth().fillMaxHeight().margin(50.px),
+
+        Row(modifier = Modifier.fillMaxWidth().fillMaxHeight().margin(50.px).scrollBehavior(ScrollBehavior.Smooth),
+            horizontalArrangement = Arrangement.Center,
+
             ) {
             Experience.values().forEach {
+                val isLast = i == Experience.values().size
                 if (i%2 == 0)
                 {
-                    ExperienceCard(it, true)
+                    ExperienceCard(it, true, isLast)
                 }
                 else
                 {
-                    ExperienceCard(it, false)
+                    ExperienceCard(it, false, isLast)
                 }
                 i++
             }
@@ -58,7 +64,7 @@ fun ExperienceHeading(){
 }
 
 @Composable
-fun ExperienceCard(experience: Experience,isDownWards:Boolean)
+fun ExperienceCard(experience: Experience,isDownWards:Boolean, isLast: Boolean)
 {
     Column (modifier = Modifier.width(300.px),
         horizontalAlignment = Alignment.Start
@@ -69,13 +75,13 @@ fun ExperienceCard(experience: Experience,isDownWards:Boolean)
                 attrs = Modifier.height(150.px).toAttrs()
             ){
             }
-            ExperiencePeriod(experience)
+            ExperiencePeriod(experience,isLast)
             ExperienceCardTitleAndDescription(experience)
         }
         else{
 
             ExperienceCardTitleAndDescription(experience)
-            ExperiencePeriod(experience)
+            ExperiencePeriod(experience,isLast)
         }
 
     }
@@ -104,7 +110,7 @@ fun ExperienceCardTitleAndDescription(experience: Experience) {
 }
 
 @Composable
-fun ExperiencePeriod(experience: Experience) {
+fun ExperiencePeriod(experience: Experience, isLast:Boolean) {
     Row (modifier = Modifier.fillMaxWidth().height(50.px).margin(top = 20.px, bottom = 20.px), verticalAlignment = Alignment.CenterVertically){
         SpanText(
             text = "2000- 2004",
@@ -116,9 +122,13 @@ fun ExperiencePeriod(experience: Experience) {
                 .clip(Polygon(Pair(0,0),Pair(80,0), Pair(100,50),Pair(80,100),Pair(0,100) ))
                 .padding(right = 40.px, left = 12.px, top = 12.px, bottom = 12.px)
         )
-        Div(
-            attrs = Modifier.height(5.px).backgroundColor(Color.Secondary.rgb).fillMaxWidth(20.percent).margin(left = (-4).px, right = (-4).px).toAttrs()
-        ) {  }
+        if (!isLast)
+        {
+            Div(
+                attrs = Modifier.height(5.px).backgroundColor(Color.Secondary.rgb).fillMaxWidth(30.percent).margin(left = (-14).px, right = (-14).px).toAttrs()
+            ) {  }
+        }
+
     }
 
 

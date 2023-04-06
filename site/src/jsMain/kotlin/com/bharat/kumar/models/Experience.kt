@@ -24,5 +24,10 @@ enum class Experience(
                 company = "Android Developer",
                 description = "loren ipsum",
                 period = "2012-2022"
-        )
+        ),
+        DeveloperIvan2(
+                company = "Android Developer",
+                description = "loren ipsum",
+                period = "2012-2022"
+        ),
 }

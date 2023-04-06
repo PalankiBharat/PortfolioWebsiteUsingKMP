@@ -28,7 +28,7 @@ fun AboutMeSection() {
     Row (
         modifier = Modifier
             .fillMaxWidth()
-            .padding(leftRight = 50.px),
+            .padding(leftRight = 50.px, topBottom = 50.px),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center
     ){
