@@ -1,21 +1,20 @@
 package com.bharat.kumar.landingSections.styles
 
-import com.bharat.kumar.themes.Colors
+import com.bharat.kumar.themes.Color
+import com.varabyte.kobweb.compose.css.CSSFloat
 import com.varabyte.kobweb.compose.css.CSSTransition
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
-import com.varabyte.kobweb.silk.components.style.ComponentStyle
-import com.varabyte.kobweb.silk.components.style.anyLink
-import com.varabyte.kobweb.silk.components.style.hover
+import com.varabyte.kobweb.silk.components.style.*
+import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.ms
-import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 
 
 val NavigationItemStyle by ComponentStyle {
     anyLink{
         Modifier
-            .color(Colors.White.rgb)
+            .color(Color.White.rgb)
             .fontSize(18.px)
             .fontFamily("Roboto")
             .transition(CSSTransition("color",500.ms))
@@ -24,7 +23,7 @@ val NavigationItemStyle by ComponentStyle {
     }
     hover{
         Modifier
-            .color(Colors.Secondary.rgb)
+            .color(Color.Secondary.rgb)
             .fontSize(20.px)
     }
 }
@@ -39,5 +38,20 @@ val MainLogoImageStyle by ComponentStyle {
         Modifier
             .scale(1.2)
             .transition(CSSTransition("scale",500.ms))
+    }
+}
+
+val AchievementsBorderStyle by ComponentStyle {
+    base{
+        Modifier
+            .borderStyle(LineStyle.Dashed)
+            .transition(CSSTransition("border",500.ms))
+
+    }
+    hover{
+        Modifier
+            .borderStyle(LineStyle.Solid)
+            .transition(CSSTransition("border",500.ms))
+
     }
 }

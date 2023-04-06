@@ -3,7 +3,7 @@ package com.bharat.kumar.themes
 import com.varabyte.kobweb.compose.ui.graphics.Color.Companion.rgb
 import org.jetbrains.compose.web.css.CSSColorValue
 
-enum class Colors(
+enum class Color(
     val hex :String,
     val rgb: CSSColorValue
 ) {

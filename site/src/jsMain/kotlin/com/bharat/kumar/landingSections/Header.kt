@@ -2,11 +2,10 @@ package com.bharat.kumar.landingSections
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
 import com.bharat.kumar.landingSections.styles.MainLogoImageStyle
 import com.bharat.kumar.landingSections.styles.NavigationItemStyle
 import com.bharat.kumar.models.Section
-import com.bharat.kumar.themes.Colors
+import com.bharat.kumar.themes.Color
 import com.bharat.kumar.utils.Resources.WEBSITE_LOGO
 import com.varabyte.kobweb.compose.css.MaxWidth
 import com.varabyte.kobweb.compose.css.ObjectFit
@@ -27,8 +26,6 @@ import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
-import org.jetbrains.compose.web.dom.P
-import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun HeaderSection() {
@@ -43,12 +40,12 @@ fun HeaderSection() {
         if (breakPoint > Breakpoint.MD) {
             HeaderMenu()
             Button(
-                modifier = Modifier.maxWidth(MaxWidth.MaxContext).backgroundColor(Colors.Secondary.rgb),
+                modifier = Modifier.maxWidth(MaxWidth.MaxContext).backgroundColor(Color.Secondary.rgb),
                 onClick = {
 
                 }
             ){
-                SpanText(text = "Download CV" , modifier = Modifier.color(Colors.White.rgb).width(Width.MaxContext))
+                SpanText(text = "Download CV" , modifier = Modifier.color(Color.White.rgb).width(Width.MaxContext))
             }
         }
 
@@ -78,7 +75,7 @@ fun HeaderMenu() {
 fun LeftSide(breakpoint: Breakpoint) {
     if (breakpoint < Breakpoint.MD)
     {
-       FaBars(modifier = Modifier.margin(right = 20.px).color(Colors.White.rgb))
+       FaBars(modifier = Modifier.margin(right = 20.px).color(Color.White.rgb))
     }
     Image(
         modifier = MainLogoImageStyle.toModifier()
