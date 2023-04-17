@@ -44,13 +44,11 @@ val AchievementsBorderStyle by ComponentStyle {
         Modifier
             .borderStyle(LineStyle.Dashed)
             .transition(CSSTransition("border-style",500.ms))
-
     }
     hover{
         Modifier
             .borderStyle(LineStyle.Solid)
             .transition(CSSTransition("border-style",500.ms))
-
     }
 }
 
@@ -59,7 +57,6 @@ val  ButtonStyle by ComponentStyle {
         Modifier
             .width(150.px)
             .transition(CSSTransition("width",300.ms))
-
     }
     hover{
         Modifier
@@ -75,11 +72,9 @@ val  NavHeaderStyle by ComponentStyle {
             .position(Position.Fixed)
             .backgroundColor(Color.Primary.rgb)
             .opacity(0.8)
-            .transition(
-                CSSTransition("ease-in-out", 0.32.s)
-            )
+            .transition(CSSTransition("ease-in-out", 0.32.s))
             .height(70.px)
-           // .transition(CSSTransition("height",100.ms))
+            //.transition(CSSTransition("height",100.ms))
             .transition(CSSTransition("opacity",300.ms))
 
     }

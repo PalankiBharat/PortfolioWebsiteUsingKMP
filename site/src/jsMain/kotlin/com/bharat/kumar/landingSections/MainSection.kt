@@ -21,7 +21,7 @@ fun MainSection() {
         AboutMeSection()
         MyAchievements()
         ExperienceSection()
-
+        SkillsSection()
 
     }
 

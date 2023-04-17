@@ -24,10 +24,12 @@ fun updateTheme(ctx: InitSilkContext) {
                 property("src","url(pop.ttf)")
             }
     }
+
+    // Configure silk here
     ctx.stylesheet.registerBaseStyle("@font-face"){
-        Modifier.fontFamily("poppins")
+        Modifier.fontFamily("carrot_medium")
             .styleModifier {
-                property("src","url(pop.ttf)")
+                property("src","url(carrot_medium.0tf)")
             }
     }
 }
