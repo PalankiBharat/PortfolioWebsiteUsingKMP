@@ -1,11 +1,13 @@
 package com.bharat.kumar.landingSections.styles
 
 import com.bharat.kumar.themes.Color
-import com.varabyte.kobweb.compose.css.CSSFloat
 import com.varabyte.kobweb.compose.css.CSSTransition
+import com.varabyte.kobweb.compose.css.Visibility
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.silk.components.style.*
+import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.css.*
 
 
@@ -37,6 +39,7 @@ val MainLogoImageStyle by ComponentStyle {
             .scale(1.2)
             .transition(CSSTransition("scale",500.ms))
     }
+
 }
 
 val AchievementsBorderStyle by ComponentStyle {
@@ -85,3 +88,31 @@ val  NavHeaderStyle by ComponentStyle {
             .transition(CSSTransition("opacity",300.ms))
     }
 }
+
+@OptIn(ExperimentalComposeWebApi::class)
+val FrontCardStyle by ComponentStyle {
+    base {
+        Modifier
+            .transition(CSSTransition("transform",300.ms))
+
+
+    }
+    hover{
+        Modifier
+            .transform {
+                rotateY(180.deg)
+            }
+            .transition(CSSTransition("transform",300.ms))
+
+    }
+}
+@OptIn(ExperimentalComposeWebApi::class)
+val FrontCardTextStyle by ComponentStyle {
+    hover{
+        Modifier
+            .transform {
+                rotateY((-180).deg)
+            }
+    }
+}
+

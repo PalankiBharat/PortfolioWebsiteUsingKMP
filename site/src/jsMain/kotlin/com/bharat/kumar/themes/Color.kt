@@ -12,5 +12,6 @@ enum class Color(
     SecondaryVariant(hex = "#2a2344", rgb = rgb(42,35,68)),
     WelcomeTextBackground(hex = "#51182e", rgb = rgb(81,24,46)),
     White(hex = "#FFFFFF", rgb = rgb(255,255,255)),
+    GreyTextColor(hex = "#282432", rgb = rgb(137, 132 ,152)),
 
 }
