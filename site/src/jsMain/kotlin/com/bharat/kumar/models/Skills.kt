@@ -7,8 +7,8 @@ enum class Skills(
     val path: String
 ) {
     Android(
-        id = "home",
-        title = "Home",
+        id = "android",
+        title = "Android",
         percentIn100 = 90,
         path = "#android"
     ),
